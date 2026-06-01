@@ -280,7 +280,7 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf589.mp3');
+    audioRef.current = new Audio('/music.mp3');
     audioRef.current.loop = true;
     return () => audioRef.current?.pause();
   }, []);
@@ -410,6 +410,8 @@ export default function App() {
         {!introFinished && <EnvelopeIntro onOpenComplete={() => setIntroFinished(true)} />}
       </AnimatePresence>
 
+      {introFinished && <MusicPlayer />}
+
       <motion.div 
         className="min-h-screen text-[#2D2A26] font-sans selection:bg-[#D8CCC0] selection:text-[#2D2A26] relative"
         initial={{ opacity: 0, filter: 'blur(20px)', scale: 0.95 }}
@@ -418,7 +420,6 @@ export default function App() {
         style={{ pointerEvents: introFinished ? 'auto' : 'none' }}
       >
         <AnimatedBackground />
-        <MusicPlayer />
 
       <motion.section 
         style={{ opacity: heroOpacity, y: heroY, scale: heroScale }}
