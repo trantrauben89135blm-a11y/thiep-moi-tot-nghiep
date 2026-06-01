@@ -10,12 +10,12 @@ import { supabase } from './lib/supabase';
 const eventConfig = {
   graduateName: "ĐÀO THỤY KHÁNH NGÂN",
   guestName: "BẠN",
-  date: "25/05/2026",
-  time: "6h",
+  date: "15/06/2026",
+  time: "15h",
   location: "173 Đ. Phạm Hùng, Chánh Hưng, Hồ Chí Minh (THPT Lương Văn Can)",
   mapUrl: "https://maps.google.com/maps?q=THPT%20Lương%20Văn%20Can,%20Phạm%20Hùng,%20Hồ%20Chí%20Minh&t=&z=15&ie=UTF8&iwloc=&output=embed",
   mapLink: "https://maps.app.goo.gl/vFRPQNzzMTLsxtw66?g_st=az",
-  targetDate: new Date('2026-05-25T06:00:00')
+  targetDate: new Date('2026-06-15T15:00:00')
 };
 
 const EnvelopeIntro = ({ onOpenComplete }: { onOpenComplete: () => void }) => {
@@ -383,7 +383,7 @@ export default function App() {
           setIsSubmitting(false);
         }, 1500);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Exception in handleRsvpSubmit:", err);
       setErrorMsg("Có lỗi xảy ra, vui lòng thử lại sau.");
       setIsSubmitting(false);
@@ -487,7 +487,7 @@ export default function App() {
               <Sparkles className="w-6 h-6" strokeWidth={1} />
            </motion.div>
            <motion.p
-             initial={{ opacity: 0, tracking: '0em', filter: 'blur(8px)' }} animate={{ opacity: 1, tracking: '0.6em', filter: 'blur(0px)' }}
+             initial={{ opacity: 0, letterSpacing: '0em', filter: 'blur(8px)' }} animate={{ opacity: 1, letterSpacing: '0.6em', filter: 'blur(0px)' }}
              transition={{ duration: 2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
              className="text-sm md:text-base font-medium text-[#7A6B5D] uppercase tracking-[0.6em] ml-3"
            >
@@ -500,7 +500,7 @@ export default function App() {
           transition={{ duration: 2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-serif text-[#1C1A17] mb-4 leading-[1.1] italic font-light relative z-10 drop-shadow-lg tracking-[-0.02em]"
         >
-          Lễ Trưởng Thành của
+          Ngày Kỷ Yếu của
         </motion.h1>
 
         <motion.div className="relative z-10 my-6">
@@ -564,8 +564,8 @@ export default function App() {
       </motion.section>
 
       <section className="py-40 px-6 md:px-12 relative z-10 max-w-7xl mx-auto w-full">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-10">
-              <div className="w-full lg:w-1/3 mt-0 lg:mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-6 md:gap-10 w-full">
+              <div className="w-full mt-0 lg:mt-24">
                 <Reveal blur yOffset={50} parallax parallaxOffset={60}>
                   <motion.div 
                     whileHover={{ y: -8, scale: 1.02 }}
@@ -586,7 +586,7 @@ export default function App() {
                 </Reveal>
               </div>
               
-              <div className="w-full lg:w-1/3 mt-0 lg:-mt-12">
+              <div className="w-full mt-0 lg:-mt-12">
                 <Reveal blur delay={0.15} yOffset={50} parallax parallaxOffset={30}>
                   <motion.div 
                     whileHover={{ y: -8, scale: 1.02 }}
@@ -607,7 +607,7 @@ export default function App() {
                 </Reveal>
               </div>
 
-              <div className="w-full lg:w-1/3 mt-0 lg:mt-32">
+              <div className="w-full mt-0 lg:mt-32">
                 <Reveal blur delay={0.3} yOffset={50} parallax parallaxOffset={80}>
                   <motion.div 
                     whileHover={{ y: -8, scale: 1.02 }}
@@ -630,8 +630,8 @@ export default function App() {
       </section>
 
       <section className="py-20 md:py-40 px-6 max-w-7xl mx-auto w-full relative z-10">
-         <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
-            <div className="w-full lg:w-5/12 flex flex-col mt-0 lg:mt-20">
+         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 md:gap-16 w-full">
+            <div className="lg:col-span-5 flex flex-col mt-0 lg:mt-20 w-full">
                <Reveal blur yOffset={60} parallax parallaxOffset={40}>
                   <motion.div 
                      whileHover={{ scale: 1.02 }}
@@ -642,22 +642,18 @@ export default function App() {
                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-radial from-[#c0a080]/20 to-transparent blur-[70px] rounded-full pointer-events-none mix-blend-multiply"></div>
                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/40 blur-[50px] rounded-full pointer-events-none"></div>
                      
-                     <h3 className="text-3xl font-serif mb-16 text-[#1C1A17] text-center relative z-10 tracking-[0.3em] font-light drop-shadow-sm uppercase">Tháng 05 . 2026</h3>
+                     <h3 className="text-3xl font-serif mb-16 text-[#1C1A17] text-center relative z-10 tracking-[0.3em] font-light drop-shadow-sm uppercase">Tháng 06 . 2026</h3>
                      <div className="relative z-10">
                         <div className="grid grid-cols-7 gap-y-10 gap-x-2 text-center text-[10px] md:text-xs font-semibold text-[#7A6B5D] mb-10 uppercase tracking-widest">
                           <div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div><div>CN</div>
                         </div>
                         <div className="grid grid-cols-7 gap-y-6 md:gap-y-8 gap-x-2 text-center font-serif text-base md:text-lg">
-                          <div className="text-transparent">0</div>
-                          <div className="text-transparent">0</div>
-                          <div className="text-transparent">0</div>
-                          <div className="text-transparent">0</div>
-                          {[...Array(24)].map((_, i) => (
+                          {[...Array(14)].map((_, i) => (
                               <div key={i+1} className="py-1 text-[#5a544d]">{i+1}</div>
                           ))}
                           
                           <div className="relative inline-flex items-center justify-center">
-                            <span className="relative z-10 text-white font-medium">25</span>
+                            <span className="relative z-10 text-white font-medium">15</span>
                             <motion.div 
                                 initial={{ scale: 0 }} whileInView={{ scale: 1 }}
                                 transition={{ type: "spring", bounce: 0.5, delay: 0.5 }} viewport={{ once: true }}
@@ -665,7 +661,7 @@ export default function App() {
                             ></motion.div>
                           </div>
 
-                          {[26,27,28,29,30,31].map(d => (
+                          {[16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].map(d => (
                                <div key={d} className="py-1 text-[#5a544d]">{d}</div>
                           ))}
                         </div>
@@ -674,14 +670,14 @@ export default function App() {
                </Reveal>
             </div>
             
-            <div className="w-full lg:w-7/12">
+            <div className="lg:col-span-7 w-full">
                <Reveal blur delay={0.2} yOffset={40} parallax parallaxOffset={80}>
                  <div className="p-8 md:p-12 flex flex-col justify-center max-w-2xl mx-auto items-center lg:items-start text-center lg:text-left">
                     <motion.div animate={{ rotate: [0, 4, -4, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}>
                        <GraduationCap strokeWidth={0.5} className="w-16 h-16 md:w-20 md:h-20 text-[#a07040]/80 mb-10" />
                     </motion.div>
                     <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1C1A17] font-light italic mb-8 leading-snug">
-                      Đánh dấu một<br/>cột mốc trưởng thành
+                      Đánh dấu một<br/>cột mốc kỷ niệm
                     </h3>
                     <p className="text-[#7A6B5D] text-base md:text-lg leading-relaxed mb-10 font-light max-w-md">
                        Ba năm trôi qua như một cái chớp mắt. Cùng nhau, chúng ta đã đi qua những niềm vui, những đêm thức trắng và những kỷ niệm không thể nào quên.
@@ -696,12 +692,12 @@ export default function App() {
       <Countdown targetDate={eventConfig.targetDate} />
 
       <section className="py-24 md:py-40 px-6 max-w-7xl mx-auto w-full relative z-10">
-         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-24 w-full">
             
-            <div className="w-full lg:w-4/12 flex flex-col items-center lg:items-start text-center lg:text-left shrink-0 relative z-10">
+            <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left relative z-10 w-full">
                <Reveal blur yOffset={40}>
                  <span className="text-[10px] md:text-[11px] uppercase tracking-[0.5em] font-medium text-[#7A6B5D] mb-6 block lg:ml-1 hidden md:block">Đường đi đến</span>
-                 <h3 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif italic text-[#1C1A17] font-light drop-shadow-sm mb-6 md:mb-8 leading-[1.1]">Lễ Đài<br className="hidden lg:block"/>Trưởng Thành</h3>
+                 <h3 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif italic text-[#1C1A17] font-light drop-shadow-sm mb-6 md:mb-8 leading-[1.1]">Ngày<br className="hidden lg:block"/>Kỷ Yếu</h3>
                  <p className="text-[#5a544d] mb-0 lg:mb-12 text-[15px] md:text-lg font-light leading-relaxed max-w-md mx-auto lg:mx-0">
                    Lễ phục đã sẵn sàng, nụ cười đã nở trên môi. Tớ đang chờ cậu tại hội trường lớn để cùng chung vui trong khoảnh khắc ý nghĩa này.
                  </p>
@@ -722,7 +718,7 @@ export default function App() {
                </Reveal>
             </div>
             
-            <div className="w-full lg:w-8/12 relative flex flex-col items-center">
+            <div className="lg:col-span-8 relative flex flex-col items-center w-full">
                <Reveal yOffset={60} blur parallax parallaxOffset={30}>
                   <div className="glass-panel p-3 md:p-6 lg:p-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_30px_80px_rgba(140,122,107,0.12)] border border-white/60 relative overflow-hidden group/card bg-white/40 w-full mb-8 lg:mb-0">
                      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-[#c0a080]/10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-1000 blur-xl pointer-events-none"></div>
